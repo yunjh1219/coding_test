@@ -9,6 +9,9 @@ import java.io.InputStreamReader;
  입력받은 문자열을 StringTokenizer 사용하여 " " 구분하여 저장
  countTokens() 로 갯수 반환
  */
+/*
+깃 리모트 연결 확인
+ */
 
 public class prob1152_2 {
     public static void main(String[] args) throws IOException {
