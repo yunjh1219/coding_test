@@ -9,7 +9,7 @@
 
 ## 커밋 규칙
 - git commit -m "[BOJ] <문제 번호> <문제 제목> <문제 레벨> <문제 풀이 방식>"
-- ex) git commit -m "[BOJ] 2908번 상수 브2 : reverse() 사용"
+- ex) git commit -m "[BOJ] 2908번:상수 / 브2 / reverse() 사용"
 
 ## 보는 방법
 1. `src` 폴더로 들어갑니다.  
