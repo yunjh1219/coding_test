@@ -1,30 +1,30 @@
 import java.io.*;
 
 public class Main {
-    public static void main(String[] rgs) throws IOException {
-        BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bfw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        char arr[][] = new char[5][15];
+        char[][] arr = new char[5][15];
 
+        // 입력 받아 배열에 저장
         for (int i = 0; i < 5; i++) {
-            String str = bfr.readLine();
-            for (int j = 0; j < str.length(); j++) {
-                arr[i][j] = str.charAt(j);
+            String line = br.readLine();
+            for (int j = 0; j < line.length(); j++) {
+                arr[i][j] = line.charAt(j);  // 문자를 배열에 저장
             }
         }
 
-        for (int j = 0; j < arr[0].length; j++) {
-            for (int i = 0; i < 5; i++) {
-                if (arr[i][j] == 0) {
-                    continue;
+        StringBuilder sb = new StringBuilder();
+
+        // 세로 탐색
+        for (int j = 0; j < 15; j++) {        // 열
+            for (int i = 0; i < 5; i++) {     // 행
+                if (arr[i][j] != '\0') {      // 값이 있으면
+                    sb.append(arr[i][j]);
                 }
-                bfw.write(String.valueOf(arr[i][j]));
             }
         }
 
-        bfr.close();
-        bfw.flush();
-        bfw.close();
+        System.out.println(sb.toString());
     }
 }
