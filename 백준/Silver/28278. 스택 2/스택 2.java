@@ -4,9 +4,11 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> st = new Stack<>();
+        StringBuilder sb = new StringBuilder(); // ✅ 출력 저장용
 
+        Stack<Integer> st = new Stack<>();
         int N = Integer.parseInt(br.readLine());
+
         for (int i = 0; i < N; i++) {
             StringTokenizer stz = new StringTokenizer(br.readLine());
             int num = Integer.parseInt(stz.nextToken());
@@ -16,29 +18,20 @@ public class Main {
                 st.push(X);
             }
             else if (num == 2) {
-                if (!st.isEmpty()) {
-                    System.out.println(st.pop()); // pop한 값 출력
-                } else {
-                    System.out.println(-1);
-                }
+                sb.append(st.isEmpty() ? -1 : st.pop()).append('\n');
             }
             else if (num == 3) {
-                System.out.println(st.size());
+                sb.append(st.size()).append('\n');
             }
             else if (num == 4) {
-                if (st.isEmpty()) {
-                    System.out.println(1);
-                } else {
-                    System.out.println(0);
-                }
+                sb.append(st.isEmpty() ? 1 : 0).append('\n');
             }
             else if (num == 5) {
-                if (!st.isEmpty()) {
-                    System.out.println(st.peek()); // peek한 값 출력
-                } else {
-                    System.out.println(-1);
-                }
+                sb.append(st.isEmpty() ? -1 : st.peek()).append('\n');
             }
         }
+
+        System.out.print(sb); // ✅ 한 번에 출력
     }
 }
+
