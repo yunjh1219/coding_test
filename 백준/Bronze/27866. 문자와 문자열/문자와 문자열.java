@@ -9,7 +9,7 @@ public class Main{
 
         int N = Integer.parseInt(br.readLine());
 
-        System.out.print(cr[N-1]);
+        System.out.print(str.charAt(N-1));
 
     }
 }
